@@ -11,7 +11,7 @@ The project follows Chinese laws and prohibits any illegal use, such as pornogra
 
 ![TuHome](https://cdn.jsdelivr.net/gh/ye-tutu/blog-cdn@main/picture/1636812165000.png)
 
-文档：https://www.tutime.cn/archives/20211114/
+文档：<https://www.tutime.cn/archives/20211114/>
 
 ## 特色
 
@@ -26,9 +26,9 @@ The project follows Chinese laws and prohibits any illegal use, such as pornogra
 ## 展示
 
 ### DEMO
+
 [土土の小窝](https://home.tutime.cn/)
 [TuHome](https://tuhome.imsb.top/)
-
 
 ## 赞助
 
@@ -39,5 +39,3 @@ The project follows Chinese laws and prohibits any illegal use, such as pornogra
 如果你决心白嫖，那也请你给项目一个**star**，这也将成为作者维护项目的动力
 
 ©️2021 Tutu
-
-

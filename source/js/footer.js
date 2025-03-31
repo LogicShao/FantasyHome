@@ -1,6 +1,11 @@
-document.write('<!-----------  footer----------->');
-document.write('' +
-    '<center>\n' +
-    '<p style="color:#333;">© 2025 Eternal Fantasy</p>\n' +
-    '</center>\n' +
-    '');
+// 创建页脚元素
+const footer = document.createElement('footer');
+footer.innerHTML = `
+<!-----------  footer----------->
+<center>
+    <p style="color:#333;">© 2025 Eternal Fantasy</p>
+</center>
+`;
+
+// 将页脚添加到页面底部
+document.body.appendChild(footer);

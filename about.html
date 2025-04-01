@@ -7,70 +7,202 @@
     <meta name="description" content="Fanta5yHome - 关于页面">
     <title>关于 - Fanta5yHome</title>
     <script type="text/javascript" src="/source/js/header.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <style>
-        /* 可以在这里添加CSS样式 */
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --text-color: #34495e;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            color: #333;
-            background-color: #f5f5f5;
         }
 
-        .change {
+        body {
+            font-family: 'Noto Sans SC', 'Arial', sans-serif;
+            line-height: 1.8;
+            color: var(--text-color);
+            background-color: #f9f9f9;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            padding: 2rem;
         }
 
-        .p_card_p {
-            width: 30%;
-            border-radius: 8px;
-            float: left;
-            margin-right: 4%;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .p_card_t {
-            font-size: 20px;
-            color: #2c3e50;
-            margin-bottom: 10px;
-        }
-
-        .p_card_text {
-            font-size: 15px;
-            color: #333;
-            line-height: 1.8;
-        }
-
-        #footer {
+        .back-button-container {
             text-align: center;
-            padding: 20px;
-            margin-top: 30px;
-            color: #666;
-        }
-
-        back-button-container {
-            text-align: center;
-            margin: 20px 0;
+            margin: 2rem 0;
         }
 
         .back-button {
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #4CAF50;
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 4px;
-            transition: background-color 0.3s;
+            border-radius: 50px;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: var(--shadow);
         }
 
         .back-button:hover {
-            background-color: #45a049;
+            background-color: var(--dark-color);
+            transform: translateY(-2px);
+        }
+
+        .about-card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-header {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .about-subtitle {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            font-weight: 400;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .profile-image {
+            flex: 1;
+            min-width: 300px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .profile-image:hover {
+            transform: scale(1.02);
+        }
+
+        .profile-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .profile-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .profile-description {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .skills-section {
+            margin-top: 2rem;
+        }
+
+        .skills-title {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skill-tag {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .skill-tag:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .about-content {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .profile-image,
+            .profile-text {
+                min-width: 100%;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+        }
+
+        .contact-section {
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px dashed #eee;
+        }
+
+        .contact-list {
+            line-height: 2;
+        }
+
+        .contact-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -99,41 +231,57 @@
         document.addEventListener('dragstart', function (e) {
             e.preventDefault();
         });
-
-        document.addEventListener('keydown', function (e) {
-            // 可以添加键盘事件处理
-        });
     </script>
 
-    <div class="back-button-container">
-        <a href="/index.html" class="back-button">← 返回首页</a>
-    </div>
+    <div class="container">
+        <div class="back-button-container">
+            <a href="/index.html" class="back-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"
+                    style="margin-right: 8px;">
+                    <path fill-rule="evenodd"
+                        d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                </svg>
+                返回首页
+            </a>
+        </div>
 
-    <div class="change" id="card">
-        <h1 class="p_card_t">关于我</h1>
-        <div class="content-wrapper">
-            <img class="p_card_p" src="/source/img/favorite.jpg" alt="个人照片">
-            <div class="text-content">
-                <p class="p_card_text">一个喜欢折腾的前端小白</p>
+        <div class="about-card">
+            <div class="about-header">
+                <h1 class="about-title">欢迎光临~</h1>
+                <p class="about-subtitle">谢谢你可以看到这里 ✨</p>
             </div>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+
+            <div class="about-content">
+                <div class="profile-image">
+                    <img src="/source/img/favorite.jpg" alt="Logic的个人照片">
+                </div>
+
+                <div class="profile-text">
+                    <p class="profile-description">
+                        嗨嗨~ 这里是Logic，一个来自浙江小城的普通学生党！(๑•̀ㅂ•́)و✧
+                    </p>
+                    <p class="profile-description">
+                        Logic这个名字取自《三体》里的罗辑啦~ Eternal Fanta5y 其实是我真名的谐音梗，没想到吧！
+                    </p>
+                    <p class="profile-description">
+                        曾经是个OIer，现在光荣退役成为蒟蒻一枚 (；′⌒`) <br>
+                        目前在ACM赛场上挣扎求生，铜尾选手就是我本人了 QAQ
+                    </p>
+
+                    <div class="contact-section">
+                        <h3 class="skills-title">来抓我呀 👻</h3>
+                        <div class="contact-list">
+                            <p class="contact-item">📧 邮箱：<a href="mailto:wyyxshao@163.com">wyyxshao@163.com</a></p>
+                            <p class="contact-item">🐱 GitHub：<a href="https://github.com/LogicShao"
+                                    target="_blank">LogicShao</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <footer id="footer">
+    <footer>
         <script type="text/javascript" src="/source/js/footer.js"></script>
     </footer>
 </body>

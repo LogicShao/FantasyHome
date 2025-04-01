@@ -1,114 +1,276 @@
 <!DOCTYPE html>
-<html oncontextmenu=self.event.returnValue=false onselectstart="return false">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="source/js/header.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Fanta5yHome - 项目展示">
     <title>项目 - Fanta5yHome</title>
+    <script type="text/javascript" src="source/js/header.js"></script>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 禁用文本选择 */
+        body {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        /* 主卡片容器 */
+        .change {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* 头部logo和标题 */
+        #favorite {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        #favorite:hover {
+            transform: scale(1.05);
+        }
+
+        .page-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title {
+            margin-left: 20px;
+        }
+
+        .page-title h1 {
+            font-size: 28px;
+            margin: 0;
+            color: #2c3e50;
+        }
+
+        .page-title p {
+            margin: 5px 0 0;
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+
+        /* 项目卡片 */
+        .project-card {
+            display: block;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: inherit;
+            text-decoration: none;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .project-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .project-image {
+            width: 30%;
+            border-radius: 8px;
+            margin-right: 4%;
+            object-fit: cover;
+            height: 180px;
+        }
+
+        .project-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .project-tags {
+            margin-bottom: 15px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 3px 10px;
+            margin-right: 8px;
+            border-radius: 5px;
+            font-size: 14px;
+            color: white;
+            font-weight: normal;
+        }
+
+        .project-title {
+            font-size: 22px;
+            margin: 0 0 10px;
+            color: #2c3e50;
+        }
+
+        .project-description {
+            font-size: 15px;
+            color: #555;
+            margin: 0;
+        }
+
+        /* 返回按钮 */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            font-size: 20px;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .back-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .back-button i {
+            margin-right: 8px;
+        }
+
+        /* 页脚 */
+        #footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+            color: #666;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .project-content {
+                flex-direction: column;
+            }
+
+            .project-image {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+
+            .page-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .page-title {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <noscript> <iframe src="*.htm"></iframe> </noscript>
-    <SCRIPT language=JavaScript>
-        document.oncontextmenu = nocontextmenu;
-        document.onmousedown = norightclick;
-        document.ondragstart = noDragstart;
-        document.onselectstart = noSelect;
-        document.onselect = document.selection.empty();
-        document.onkeydown = keyDown;
-    </SCRIPT>
+    <noscript>
+        <iframe src="*.htm"></iframe>
+    </noscript>
+
+    <script>
+        // 禁用右键菜单和选择文本
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('selectstart', function (e) {
+            e.preventDefault();
+        });
+
+        document.addEventListener('mousedown', function (e) {
+            if (e.button === 2) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('dragstart', function (e) {
+            e.preventDefault();
+        });
+    </script>
+
     <div class="change" id="card">
-        <a style="padding:2%;" href="/"><img class="change" id="favorite"
-                style="float:left;width:80px;margin-top:-15px;margin-left:-15px;" src="source/img/favorite.jpg"></a>
-        <div style="padding:1%;float:left;"><b style="font-size:150%;">项目<br></b>Project</div>
+        <!-- 页面头部 -->
+        <div class="page-header">
+            <a href="/"><img id="favorite" src="source/img/favorite.jpg" alt="Fanta5yHome Logo"></a>
+            <div class="page-title">
+                <h1>项目</h1>
+                <p>Project</p>
+            </div>
+        </div>
 
-        <br><br><br><br>
-
-        <a target="_blank" rel="nofollow" href="https://home.tutime.cn/">
-            <div style="overflow:hidden;padding:1%;margin:5%;" class="project_card">
-                <img class="p_card_p" style="padding-right:4%;border-radius:8px;width:30%;float:left;"
-                    src="https://image.thum.io/get/width/1024/crop/768/https://home.tutime.cn/">
-                <left>
-                    <b class="p_card_tag"
-                        style="border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;开源库</b>
-                    <b class="p_card_tag"
-                        style="background: #0099ff!important;border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;前端</b><br><br>
-                    <p class="p_all_text">
-                        <left><b class="p_card_t"
-                                style="padding-right:1%;float:left;font-size:20px;margin-top:-20px;">TuHome</b><br>
-                        </left>
-                        <a class="p_card_text" style="font-size:15px;padding-right:1%;color:#333;">一款毛玻璃样式的个人主页</a>
-                </left>
-                </p>
-                <br><br>
+        <!-- 项目列表 -->
+        <a target="_blank" rel="nofollow" href="https://home.tutime.cn/" class="project-card">
+            <div class="project-content">
+                <img class="project-image" src="https://image.thum.io/get/width/1024/crop/768/https://home.tutime.cn/"
+                    alt="TuHome项目截图">
+                <div class="project-details">
+                    <div class="project-tags">
+                        <span class="project-tag" style="background-color:#4caf50;">开源库</span>
+                        <span class="project-tag" style="background-color:#0099ff;">前端</span>
+                    </div>
+                    <h3 class="project-title">TuHome</h3>
+                    <p class="project-description">一款毛玻璃样式的个人主页</p>
+                </div>
             </div>
         </a>
 
-        <!-- <a target="_blank" rel="nofollow" href="https://github.com/ye-tutu/Make_Links">
-            <div style="overflow:hidden;padding:1%;margin:5%;" class="project_card">
-                <img class="p_card_p" style="padding-right:4%;border-radius:8px;width:30%;float:left;"
-                    src="https://cdn.jsdelivr.net/gh/ye-tutu/blog-cdn/picture/20210903/1.png">
-                <left>
-                    <b class="p_card_tag"
-                        style="border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;开源库</b>
-                    <b class="p_card_tag"
-                        style="background: #0099ff!important;border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;前端</b>
-                    <b class="p_card_tag"
-                        style="background: #CD3333!important;border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;Python</b><br><br>
-                    <p class="p_all_text">
-                        <left><b class="p_card_t"
-                                style="padding-right:1%;float:left;font-size:20px;margin-top:-20px;">Make_links</b><br>
-                        </left>
-                        <a class="p_card_text"
-                            style="font-size:15px;padding-right:1%;color:#333;">用python生成精美的友情链接网页<br> Github
-                            ：https://github.com/ye-tutu/Make_Links</a>
-                </left>
-                </p>
-                <br><br>
+        <!-- 注释掉的其他项目模板 -->
+        <!--
+        <a target="_blank" rel="nofollow" href="https://github.com/ye-tutu/Make_Links" class="project-card">
+            <div class="project-content">
+                <img class="project-image" src="https://cdn.jsdelivr.net/gh/ye-tutu/blog-cdn/picture/20210903/1.png" alt="Make_Links项目截图">
+                <div class="project-details">
+                    <div class="project-tags">
+                        <span class="project-tag" style="background-color:#4caf50;">开源库</span>
+                        <span class="project-tag" style="background-color:#0099ff;">前端</span>
+                        <span class="project-tag" style="background-color:#CD3333;">Python</span>
+                    </div>
+                    <h3 class="project-title">Make_links</h3>
+                    <p class="project-description">用python生成精美的友情链接网页<br> Github ：https://github.com/ye-tutu/Make_Links</p>
+                </div>
             </div>
         </a>
+        -->
 
-        <a target="_blank" rel="nofollow" href="https://github.com/ye-tutu/PseudoMacLogin">
-            <div style="overflow:hidden;padding:1%;margin:5%;" class="project_card">
-                <img class="p_card_p" style="padding-right:4%;border-radius:8px;width:30%;float:left;"
-                    src="https://cdn.jsdelivr.net/gh/ye-tutu/blog-cdn@main/picture/1635052804000.png">
-                <left>
-                    <b class="p_card_tag"
-                        style="border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;开源库</b>
-                    <b class="p_card_tag"
-                        style="background: #0099ff!important;border-radius:5px;color:#fff;background-color:#4caf50;padding-right:1%;float:left;font-size:15px;">
-                        &nbsp;前端</b>
-                    <br><br>
-                    <p class="p_all_text">
-                        <left><b class="p_card_t"
-                                style="padding-right:1%;float:left;font-size:20px;margin-top:-20px;">PseudoMacLogin</b><br>
-                        </left>
-                        <a class="p_card_text"
-                            style="font-size:15px;padding-right:1%;color:#333;">一个模拟mac登录界面网页，骗电脑密码的神器<br> Github
-                            ：https://github.com/ye-tutu/PseudoMacLogin</a>
-                </left>
-                </p>
-                <br><br>
-            </div>
-        </a> -->
-
-        <br><br><br>
-
-        <a style="padding:2%;" href="/"><i class="iconfont iconicon-arrow-left2">返回</i></a>
-        <br>
-        <br>
+        <!-- 返回按钮 -->
+        <div style="text-align: center;">
+            <a href="/" class="back-button">
+                <i class="iconfont iconicon-arrow-left2"></i> 返回首页
+            </a>
+        </div>
     </div>
+
     <footer id="footer">
         <script type="text/javascript" src="source/js/footer.js"></script>
     </footer>
-
 </body>
 
 </html>
